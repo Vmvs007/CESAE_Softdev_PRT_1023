@@ -15,6 +15,7 @@ public class Ex_04 {
         System.out.print("Lugar na Corrida: ");
         lugar = input.nextInt();
 
+
         switch (lugar) {
 
             case 1:
