@@ -29,6 +29,7 @@ public class Ex_15 {
         escolha=input.next();
 
         switch (escolha){
+            case "c":
             case "C": // Crescente
 
                 if(a<b && a<c){ // a ... ...
@@ -60,6 +61,7 @@ public class Ex_15 {
 
                 break;
 
+            case "d":
             case "D": // Descrescente
 
                 if(a<b && a<c){ // ... ... a
@@ -95,5 +97,7 @@ public class Ex_15 {
                 System.out.println("Escolha inválida! C para Crescente ou D para Decrescente");
                 break;
         }
+
     }
 }
+
