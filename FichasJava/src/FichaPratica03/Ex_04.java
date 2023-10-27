@@ -15,8 +15,11 @@ public class Ex_04 {
         System.out.print("Insira o limite: ");
         limite=input.nextInt();
 
+        // Ciclo que vai andar com o contador de 1 em 1 até chegar ao valor de limite
         while(contador<=limite){
             System.out.println(contador);
+
+            // Aumenta 1 ao contador
             contador=contador+1;
         }
 
