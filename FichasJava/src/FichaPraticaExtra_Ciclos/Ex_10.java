@@ -6,8 +6,8 @@ public class Ex_10 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-// Declarar variáveis
-        int numero, numeroInvertido=0, digito=0;
+        // Declarar variáveis
+        int numero, numeroInvertido = 0, digito = 0;
 
         // Ler numero
         System.out.print("Insira um número: ");
