@@ -10,7 +10,7 @@ public class Ex_10 {
         int numero, numeroInvertido=0, digito=0;
 
         // Ler numero
-        System.out.print("Digite um número inteiro: ");
+        System.out.print("Insira um número: ");
         numero = input.nextInt();
 
         while (numero != 0) {
