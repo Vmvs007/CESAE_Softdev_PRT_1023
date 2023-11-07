@@ -2,6 +2,8 @@ package FichaPratica05;
 
 import java.util.Scanner;
 
+import static FichaPratica06.BibliotecaMatrizes.imprimirMatrizInteiros;
+
 public class Ex_11 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
@@ -37,12 +39,7 @@ public class Ex_11 {
         }
 
         // Imprimir a matriz na consola
-        for (int linha = 0; linha <  matriz.length; linha++) {
-            for (int coluna = 0; coluna < matriz[0].length; coluna++) {
-                System.out.print(matriz[linha][coluna]+ "\t");
-            }
-            System.out.println();
-        }
+        imprimirMatrizInteiros(matriz);
 
         System.out.println("\nMenor: "+menor);
         System.out.println("Maior: "+maior);
