@@ -17,14 +17,18 @@ public class Ex_03 {
             vetor[indice]= input.nextInt();
         }
 
+        // Inicializar o maior elemento com o primeiro elemento do vetor
         maiorElemento=vetor[0];
 
+        // Ciclo que vai iterar o vetor
         for(int indice=0; indice<10; indice++){
+            // Se o elemento atual for maior que o "maiorElemento"
             if(vetor[indice]>maiorElemento){
                 maiorElemento= vetor[indice];
             }
         }
 
+        // Imprimir maior elemento
         System.out.println("Maior Elemento: "+maiorElemento);
 
     }

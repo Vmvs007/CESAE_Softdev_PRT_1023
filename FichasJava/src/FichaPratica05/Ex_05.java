@@ -17,11 +17,16 @@ public class Ex_05 {
             vetor[indice] = input.nextInt();
         }
 
+        // Ciclo que vai iterar o vetor
         for (int indice = 0; indice < vetor.length; indice++) {
+            // Calcular o somatório somando todos os elementos do vetor
             somatorio = somatorio + vetor[indice];
         }
 
+        // Calcular a média: somatorio/nº de elementos
         media = somatorio / vetor.length;
+
+        // Imprimir a media
         System.out.println("Média dos Elementos: " + media);
 
     }

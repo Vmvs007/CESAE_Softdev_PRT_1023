@@ -17,14 +17,18 @@ public class Ex_04 {
             vetor[indice]= input.nextInt();
         }
 
+        // Inicializar o menor elemento com o primeiro elemento do vetor
         menorElemento=vetor[0];
 
+        // Ciclo que vai iterar o vetor
         for(int indice=0; indice<10; indice++){
+            // Se o elemento atual for menor que o "menorElemento"
             if(vetor[indice]<menorElemento){
                 menorElemento= vetor[indice];
             }
         }
 
+        // Imprimir menor elemento
         System.out.println("Menor Elemento: "+menorElemento);
 
     }
