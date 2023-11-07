@@ -1,6 +1,5 @@
 package FichaPratica06;
 
-import javax.imageio.stream.ImageInputStream;
 import java.util.Scanner;
 
 public class Ex_01 {
