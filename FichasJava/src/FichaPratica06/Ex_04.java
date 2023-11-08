@@ -12,10 +12,11 @@ public class Ex_04 {
 
         int numero, opcao;
 
-        System.out.print("Insira um número:");
-        numero= input.nextInt();
+        System.out.print("Insira um número: ");
+        numero = input.nextInt();
 
-        do{
+        do {
+            System.out.println("\n\n******* Análise do Número: " + numero + " *******\n");
             System.out.println("1. Par ou Impar");
             System.out.println("2. Positivo ou Negativo");
             System.out.println("3. Primo ou Não Primo");
@@ -25,29 +26,29 @@ public class Ex_04 {
             System.out.println("7. Sair");
 
             System.out.print("\nInsira a opção: ");
-            opcao= input.nextInt();
+            opcao = input.nextInt();
 
-            switch (opcao){
+            switch (opcao) {
                 case 1: // Par ou Impar
-                    if(par(numero)){
+                    if (par(numero)) {
                         System.out.println("Par");
-                    }else{
+                    } else {
                         System.out.println("Impar");
                     }
                     break;
 
                 case 2: // Positivo ou Negativo
-                    if(positivo(numero)){
+                    if (positivo(numero)) {
                         System.out.println("Positivo");
-                    }else{
+                    } else {
                         System.out.println("Negativo");
                     }
                     break;
 
                 case 3: // Primo ou não Primo
-                    if(primo(numero)){
+                    if (primo(numero)) {
                         System.out.println("Primo");
-                    }else{
+                    } else {
                         System.out.println("Não Primo");
                     }
                     break;
@@ -62,12 +63,14 @@ public class Ex_04 {
                     break;
 
                 case 7: // Sair
+                    System.out.println("\nObrigado! Até à próxima!");
+                    break;
 
                 default:
                     System.out.println("Opção Inválida!!!");
             }
 
-        }while(opcao!=7);
+        } while (opcao != 7);
 
     }
 }
