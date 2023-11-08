@@ -52,13 +52,11 @@ public class Ex_04 {
                     }
                     break;
 
-                case 4: // Par && Positivo && Primo
-                    if(par(numero) && positivo(numero) && primo(numero)){
-                        System.out.println("Par, Positivo e Primo ao mesmo tempo");
-                    }
+                case 4: // Perfeito
                     break;
 
-                case 5: break;
+                case 5: // Triangular
+                    break;
 
                 case 6: // Trocar de Número
                     break;
