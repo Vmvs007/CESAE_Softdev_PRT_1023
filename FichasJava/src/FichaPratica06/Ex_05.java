@@ -4,7 +4,6 @@ public class Ex_05 {
 
     /**
      * Método que retorna o maior elemento do array
-     *
      * @param vetor Array a ser analisado
      * @return Maior elemento
      */
@@ -12,7 +11,9 @@ public class Ex_05 {
 
         int maiorElemento = vetor[0];
 
+        // Ciclo que vai iterar o vetor para encontrar o maior elemento
         for (int indice = 0; indice < vetor.length; indice++) {
+            // Se o vetor na posição atual for maior que "maiorElemento"
             if (vetor[indice] > maiorElemento) {
                 maiorElemento = vetor[indice];
             }
