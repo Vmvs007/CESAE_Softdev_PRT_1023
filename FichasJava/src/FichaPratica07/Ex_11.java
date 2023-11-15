@@ -104,14 +104,73 @@ public class Ex_11 {
         }
     }
 
+    /**
+     * Método para imprimir na consola as músicas de um determinado genero
+     *
+     * @param matrizTotal Matriz a pesquisar
+     * @param genero      Género a pesquisar
+     */
     public static void pesquisarMusicasPorGenero(String[][] matrizTotal, String genero) {
 
         for (int linha = 0; linha < matrizTotal.length; linha++) {
 
-            if(matrizTotal[linha][2].equals(genero)){
-                System.out.println("Nome Música: "+matrizTotal[linha][0]+"\t"+"Artista: "+matrizTotal[linha][1]);
+            if (matrizTotal[linha][2].equals(genero)) {
+                System.out.println("Nome Música: " + matrizTotal[linha][0] + "\t" + "Artista: " + matrizTotal[linha][1]);
             }
         }
+    }
+
+    /**
+     * Método para imprimir na consola as músicas de um determinado artista
+     *
+     * @param matrizTotal Matriz a pesquisar
+     * @param artista     Artista a pesquisar
+     */
+    public static void pesquisarMusicasPorArtista(String[][] matrizTotal, String artista) {
+        for (int linha = 0; linha < matrizTotal.length; linha++) {
+
+            if (matrizTotal[linha][1].equals(artista)) {
+                System.out.println("Nome Música: " + matrizTotal[linha][0] + "\t" + "Género: " + matrizTotal[linha][2]);
+            }
+        }
+    }
+
+
+    /**
+     * Método que imprime na consola a musica com maior duracao
+     * @param matrizTotal
+     */
+    public static void pesquisarMusicaMaiorDuracao(String[][] matrizTotal){
+        int maiorDuracao=0, duracao;
+        String linhaMusicaMaisLonga="";
+
+        // Iterar a matriz
+        for(int linha=0; linha<matrizTotal.length; linha++){
+
+            // Separar a coluna 3 com base no ":"
+            String[] duracaoString = matrizTotal[linha][3].split(":");
+
+            // Passar a duração para um inteiro (minutos multiplicam por 100) e segundos entram diretos
+            duracao=(Integer.parseInt(duracaoString[0])*100)+Integer.parseInt(duracaoString[1]);
+
+            // Se a minha duracaoAtual for maior que a maiorDuracao
+            if(duracao>maiorDuracao){
+                // Limpa a String que contem a musica maior
+                linhaMusicaMaisLonga="";
+
+                // Atualiza a maiorDuracao
+                maiorDuracao=duracao;
+
+                // Constroi a String da Musica com maior duracao
+                for(int i=0; i<matrizTotal[0].length;i++){
+                    linhaMusicaMaisLonga+=matrizTotal[linha][i]+"\t|\t";
+                }
+            }
+        }
+
+        // Imprimir a musica com maior duracao
+        System.out.println(linhaMusicaMaisLonga);
+
     }
 
     public static void main(String[] args) throws FileNotFoundException {
@@ -153,10 +212,11 @@ public class Ex_11 {
                     input.nextLine();
                     String artista = input.nextLine();
 
-
+                    pesquisarMusicasPorArtista(matrizTotal, artista);
                     break;
 
                 case 3: // Pesquisar música com maior duração
+                    pesquisarMusicaMaiorDuracao(matrizTotal);
                     break;
 
                 case 4: // Pesquisar músicas com duração acima de um valor especificado
