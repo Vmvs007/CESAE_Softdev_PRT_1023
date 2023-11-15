@@ -138,32 +138,33 @@ public class Ex_11 {
 
     /**
      * Método que imprime na consola a musica com maior duracao
+     *
      * @param matrizTotal
      */
-    public static void pesquisarMusicaMaiorDuracao(String[][] matrizTotal){
-        int maiorDuracao=0, duracao;
-        String linhaMusicaMaisLonga="";
+    public static void pesquisarMusicaMaiorDuracao(String[][] matrizTotal) {
+        int maiorDuracao = 0, duracao;
+        String linhaMusicaMaisLonga = "";
 
         // Iterar a matriz
-        for(int linha=0; linha<matrizTotal.length; linha++){
+        for (int linha = 0; linha < matrizTotal.length; linha++) {
 
             // Separar a coluna 3 com base no ":"
             String[] duracaoString = matrizTotal[linha][3].split(":");
 
             // Passar a duração para um inteiro (minutos multiplicam por 100) e segundos entram diretos
-            duracao=(Integer.parseInt(duracaoString[0])*100)+Integer.parseInt(duracaoString[1]);
+            duracao = (Integer.parseInt(duracaoString[0]) * 100) + Integer.parseInt(duracaoString[1]);
 
             // Se a minha duracaoAtual for maior que a maiorDuracao
-            if(duracao>maiorDuracao){
+            if (duracao > maiorDuracao) {
                 // Limpa a String que contem a musica maior
-                linhaMusicaMaisLonga="";
+                linhaMusicaMaisLonga = "";
 
                 // Atualiza a maiorDuracao
-                maiorDuracao=duracao;
+                maiorDuracao = duracao;
 
                 // Constroi a String da Musica com maior duracao
-                for(int i=0; i<matrizTotal[0].length;i++){
-                    linhaMusicaMaisLonga+=matrizTotal[linha][i]+"\t|\t";
+                for (int i = 0; i < matrizTotal[0].length; i++) {
+                    linhaMusicaMaisLonga += matrizTotal[linha][i] + "\t|\t";
                 }
             }
         }
