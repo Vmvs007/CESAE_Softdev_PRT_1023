@@ -174,6 +174,31 @@ public class Ex_11 {
 
     }
 
+    public static void pesquisarMusicasAcimaDeDuracao(String[][] matrizTotal, int minutos, int segundos){
+
+        int duracaoEspecificada= (minutos*100)+segundos;
+
+        int  duracao;
+
+        // Iterar a matriz
+        for (int linha = 0; linha < matrizTotal.length; linha++) {
+
+            // Separar a coluna 3 com base no ":"
+            String[] duracaoString = matrizTotal[linha][3].split(":");
+
+            // Passar a duração para um inteiro (minutos multiplicam por 100) e segundos entram diretos
+            duracao = (Integer.parseInt(duracaoString[0]) * 100) + Integer.parseInt(duracaoString[1]);
+
+            if(duracao>=duracaoEspecificada){
+                for (int i = 0; i < matrizTotal[0].length; i++) {
+                    System.out.print(matrizTotal[linha][i] + "\t|\t");
+                }
+                System.out.println();
+            }
+        }
+
+    }
+
     public static void main(String[] args) throws FileNotFoundException {
 
         Scanner input = new Scanner(System.in);
@@ -200,7 +225,7 @@ public class Ex_11 {
             switch (opcao) {
                 case 1: // Pesquisar por músicas de um determinado género
                     System.out.println("\n*** Pesquisar por músicas de um determinado género ***");
-                    System.out.print("Género a pesquisar:");
+                    System.out.print("Género a pesquisar: ");
                     input.nextLine();
                     String genero = input.nextLine();
 
@@ -209,7 +234,7 @@ public class Ex_11 {
 
                 case 2: // Pesquisar músicas de um determinado artista
                     System.out.println("\n*** Pesquisar músicas de um determinado artista ***");
-                    System.out.print("Artista a pesquisar:");
+                    System.out.print("Artista a pesquisar: ");
                     input.nextLine();
                     String artista = input.nextLine();
 
@@ -217,16 +242,32 @@ public class Ex_11 {
                     break;
 
                 case 3: // Pesquisar música com maior duração
+                    System.out.println("\n*** Pesquisar música com maior duração ***");
                     pesquisarMusicaMaiorDuracao(matrizTotal);
                     break;
 
                 case 4: // Pesquisar músicas com duração acima de um valor especificado
+                    int minutos, segundos;
+                    System.out.println("\n*** Pesquisar músicas com duração acima de um valor especificado ***");
+
+                    do {
+                        System.out.print("Insira os minutos: ");
+                        minutos = input.nextInt();
+                        System.out.print("Insira os segundos: ");
+                        segundos = input.nextInt();
+
+                    } while (segundos > 59);
+
+                    pesquisarMusicasAcimaDeDuracao(matrizTotal,minutos,segundos);
+
                     break;
 
                 case 5: // Número de músicas no ficheiro
+                    System.out.println("Músicas no ficheiro: " + matrizTotal.length);
                     break;
 
                 case 0: // Sair
+                    System.out.println("Obrigado, até logo!");
                     break;
 
                 default: // Opção inválida
