@@ -20,7 +20,7 @@ public class Competicao {
             }
         }
     }
-    
+
 
     public void imprimirCompeticao() {
         System.out.println("Nome: " + this.nome);
