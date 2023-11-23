@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class MusicPlayer {
 
-    ArrayList<Musica> programacao;
+    private ArrayList<Musica> programacao;
 
     public MusicPlayer() {
         this.programacao = new ArrayList<>();
