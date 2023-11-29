@@ -1,13 +1,17 @@
 package Pizzaria;
 
+import Pizzaria.Enums.BasePizza;
 import Pizzaria.Enums.TamanhoPizza;
 import Pizzaria.Enums.UnidadeMedida;
+import Pizzaria.Ingredientes.Base;
+import Pizzaria.Ingredientes.Ingrediente;
 
 public class Main {
     public static void main(String[] args) {
 
         // Instanciar ingredientes
-        Ingrediente baseFina = new Ingrediente("I-0011", "Base Fina Italiana", UnidadeMedida.GRAMAS, 1.5);
+        Base baseFina = new Base("I-0011", "Base Fina Italiana", 1.5, BasePizza.FINA,"Mais italiana não há");
+
         Ingrediente queijoMozarella = new Ingrediente("I-0022", "Queijo Mozarella", UnidadeMedida.GRAMAS, 2.8);
         Ingrediente molhoTomate = new Ingrediente("I-0090", "Molho Tomate", UnidadeMedida.LITROS, 250);
         Ingrediente fiambre = new Ingrediente("I-0120", "Fiambre Perna Extra", UnidadeMedida.UNIDADES, 12);

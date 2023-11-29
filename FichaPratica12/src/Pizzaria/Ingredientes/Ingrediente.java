@@ -1,4 +1,4 @@
-package Pizzaria;
+package Pizzaria.Ingredientes;
 
 import Pizzaria.Enums.UnidadeMedida;
 

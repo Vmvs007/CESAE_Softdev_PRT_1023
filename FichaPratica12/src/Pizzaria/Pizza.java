@@ -1,6 +1,8 @@
 package Pizzaria;
 
+import Pizzaria.Enums.BasePizza;
 import Pizzaria.Enums.TamanhoPizza;
+import Pizzaria.Ingredientes.*;
 
 import java.util.ArrayList;
 
@@ -28,7 +30,14 @@ public class Pizza {
      * @param ingredientePizzaNovo IngredientePizza a adicionar
      */
     public void addIngredientePizza(IngredientePizza ingredientePizzaNovo) {
-        if (this.composicao.size() < 5) {
+
+        // Condição para avaliar se o primeiro elemento a ser inserido é Base
+        if (this.composicao.size() == 0 && ingredientePizzaNovo.getIngrediente() instanceof Base) {
+            this.composicao.add(ingredientePizzaNovo);
+        }
+
+        // Condição para avaliar se o todos os elementos que não o primeiro são do tipo Topping
+        if (this.composicao.size() > 0 && this.composicao.size() < 5 && ingredientePizzaNovo.getIngrediente() instanceof Topping) {
             this.composicao.add(ingredientePizzaNovo);
         }
     }
@@ -58,8 +67,11 @@ public class Pizza {
         for (IngredientePizza ingredientePizzaAtual : this.composicao) {
 
             if (ingredientePizzaAtual.getIngrediente().getCodigo().equals(codigoIngredienteRemover)) {
-                this.composicao.remove(ingredientePizzaAtual);
-                return;
+
+                if (!(ingredientePizzaAtual.getIngrediente() instanceof Base)) {
+                    this.composicao.remove(ingredientePizzaAtual);
+                    return;
+                }
             }
 
         }
@@ -81,6 +93,44 @@ public class Pizza {
         }
 
         return kcalTotais;
+    }
+
+    public String tipoPizza() {
+        int contadorCarne = 0, contadorMar = 0, contadorQueijo = 0, contadorVegetal = 0;
+        int quantidadeToppings = this.composicao.size() - 1;
+
+        for (IngredientePizza ingredientePizzaAtual : this.composicao) {
+            if (ingredientePizzaAtual.getIngrediente() instanceof Queijo) {
+                contadorQueijo++;
+            }
+
+            if (ingredientePizzaAtual.getIngrediente() instanceof Carne) {
+                contadorCarne++;
+            }
+
+            if (ingredientePizzaAtual.getIngrediente() instanceof FrutoMar) {
+                contadorMar++;
+            }
+
+            if (ingredientePizzaAtual.getIngrediente() instanceof Vegetal) {
+                contadorVegetal++;
+            }
+        }
+
+
+        if (contadorCarne == quantidadeToppings) {
+            return "Carne";
+        } else if (contadorVegetal == quantidadeToppings) {
+            return "Vegetariana";
+        } else if (contadorMar == quantidadeToppings) {
+            return "Mar";
+        } else if (contadorCarne >= 1 && contadorVegetal >= 1 && contadorMar >= 1 && contadorQueijo >= 1) {
+            return "Completa";
+        } else {
+            return "Mista";
+        }
+
+
     }
 
 
