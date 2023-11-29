@@ -31,4 +31,8 @@ public class Ingrediente {
     public double getKcalUnidadeMedida() {
         return kcalUnidadeMedida;
     }
+
+    public void exibirDetalhes() {
+        System.out.print("[" + this.codigo + " | " + this.nome + " | " + this.medidaIngrediente + " | " + this.kcalUnidadeMedida + " Kcal]");
+    }
 }
