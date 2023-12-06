@@ -1,0 +1,12 @@
+2023-12-06T12:19:39.182613900: Inicio do Programa
+2023-12-06T12:19:39.193139500: x: 20
+2023-12-06T12:19:39.193139500: y: 15
+2023-12-06T12:19:39.194138100: Objeto “mercedes” da Classe Carro criado com sucesso
+2023-12-06T12:19:39.194138100: Objeto “ferrari” da Classe Carro criado com sucesso
+2023-12-06T12:20:49.578722500: Inicio do Programa
+2023-12-06T12:20:49.589231400: x: 20
+2023-12-06T12:20:49.589231400: y: 15
+2023-12-06T12:20:49.589231400: Objeto “mercedes” da Classe Carro criado com sucesso
+2023-12-06T12:20:49.589231400: Objeto “ferrari” da Classe Carro criado com sucesso
+2023-12-06T12:20:49.590524500: Estou a tentar criar outro ficheiro de log...
+2023-12-06T12:20:49.590524500: w: 115
