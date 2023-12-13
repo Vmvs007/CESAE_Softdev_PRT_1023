@@ -85,7 +85,7 @@ public class AdministradorController {
         double somaVendas=0;
 
         for (Venda vendaAtual: this.todasVendas) {
-            somaVendas += vendaAtual.getPrecoUnitario();
+            somaVendas += vendaAtual.getPrecoUnitario()*vendaAtual.getQuantidadeVendida();
 
 
 
