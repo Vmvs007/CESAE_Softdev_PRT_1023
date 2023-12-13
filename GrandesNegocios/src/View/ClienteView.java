@@ -1,6 +1,7 @@
 package View;
 
 import Controllers.ClientController;
+import Domain.Venda;
 
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -29,14 +30,31 @@ public class ClienteView {
             switch (opcao) {
                 case 1:
                     System.out.println("\n*** Consultar Produtos Disponiveis ***\n");
+
+                    for (Venda vendaAtual : clientController.produtosDisponiveisSemDuplicados()) {
+                        vendaAtual.exibirDetalhesProduto();
+                    }
+
                     break;
 
                 case 2:
                     System.out.println("\n*** Consultar Produtos de Categoria ***\n");
+                    String categoria;
+
+                    System.out.println("Qual a categoria desejada?");
+                    System.out.print("Categoria: ");
+                    categoria = input.next();
+
+
+                    for (Venda vendaAtual : clientController.produtosDeCategoria(categoria)) {
+                        vendaAtual.exibirDetalhesProduto();
+                    }
+
                     break;
 
                 case 3:
                     System.out.println("\n*** Consultar Produto Mais Barato ***\n");
+                    clientController.produtoMaisBarato().exibirDetalhesProduto();
                     break;
 
                 case 4:

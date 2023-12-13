@@ -3,13 +3,14 @@ package View;
 import Controllers.LoginController;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class EntryView {
     public EntryView() {
     }
 
-    public static void menuLogin() throws FileNotFoundException {
+    public static void menuLogin() throws IOException {
         Scanner input = new Scanner(System.in);
 
         LoginController loginController = new LoginController();
