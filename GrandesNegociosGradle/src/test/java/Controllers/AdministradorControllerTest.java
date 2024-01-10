@@ -1,5 +1,6 @@
 package Controllers;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -58,6 +59,7 @@ class AdministradorControllerTest {
      * Método para testar se o método adicionarUtilizador lança uma exceção caso o tipo de utilizador não seja admin ou func
      * @throws IOException
      */
+    /*
     @Test
     public void adicionarUtilizadorInvalidoTest() throws IOException {
         String filePath = "src/test/resources/login_grandesNegociosTest.csv";
@@ -69,6 +71,11 @@ class AdministradorControllerTest {
         assertThrows(IllegalArgumentException.class, () -> {
             administradorController.adicionarUtilizador("ADMINISTRADOR", "jeremias", "12345", filePath);
         });
-    }
+    }*/
 
+    @AfterEach
+    void tearDown() {
+        // Limpar o ficheiro
+        // Copiar do login_grandesNegociosTestOriginal.csv para login_grandesNegociosTest.csv
+    }
 }

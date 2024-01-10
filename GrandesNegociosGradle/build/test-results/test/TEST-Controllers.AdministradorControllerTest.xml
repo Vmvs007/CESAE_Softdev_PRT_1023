@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Controllers.AdministradorControllerTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-01-10T13:15:04" hostname="VITORPC" time="0.032">
+  <properties/>
+  <testcase name="adicionarUtilizadorValidoTest()" classname="Controllers.AdministradorControllerTest" time="0.026"/>
+  <testcase name="produtoMaisVendidoTest()" classname="Controllers.AdministradorControllerTest" time="0.005"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
