@@ -12,8 +12,8 @@ import java.util.ArrayList;
 public class AdministradorController {
     private ArrayList<Venda> todasVendas;
 
-    public AdministradorController() throws FileNotFoundException {
-        VendasRepository repository = new VendasRepository("src/main/resources/minimercado.csv");
+    public AdministradorController(String path) throws FileNotFoundException {
+        VendasRepository repository = new VendasRepository(path);
         this.todasVendas = repository.getVendaArray();
     }
     public Venda produtoMaisVendido() {
@@ -70,8 +70,8 @@ public class AdministradorController {
         return produtoMaisValor;
     }
 
-    public  void adicionarUtilizador(String tipoUtilizador, String username, String password) throws IOException, IOException {
-        File file = new File("Ficheiros/login_grandesNegocios.csv");
+    public  void adicionarUtilizador(String tipoUtilizador, String username, String password, String filePath) throws IOException, IOException {
+        File file = new File(filePath);
         FileWriter fW = new FileWriter(file,true);
 
         fW.append("\n" + tipoUtilizador + ";" + username + ";" + password);
