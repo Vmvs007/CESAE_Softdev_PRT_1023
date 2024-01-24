@@ -1,12 +1,12 @@
-package com.example.conversoreurodolar
+package com.example.linearlayoutapp
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.conversoreurodolar.databinding.ActivityMainBinding
+import com.example.linearlayoutapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    private val binding by lazy{
+    private val binding by lazy {
         ActivityMainBinding.inflate(layoutInflater)
     }
 
@@ -15,14 +15,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.buttonConversor.setOnClickListener{
-            var euros: Double = binding.editTextEuro.text.toString().toDouble()
+            var euros: Double = binding.editValorEuros.text.toString().toDouble()
             var taxaConversao :Double = 1.09
 
             var dolares : Double = euros*taxaConversao
 
             dolares = String.format("%.2f",dolares).toDouble()
 
-            binding.textDolares.text= "$dolares $"
+            binding.textValorDolares.text= "$dolares $"
         }
     }
 }
